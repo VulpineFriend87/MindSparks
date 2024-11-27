@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Sparks</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div id="loading-screen">
+            <div class="loader-container">
+                <div class="spinner spinner-outer"></div>
+                <div class="spinner spinner-middle"></div>
+                <div class="spinner spinner-inner"></div>
+            </div>
+            <p>Loading Questions...</p>
+        </div>
+
+        <div id="start-screen" class="screen">
+            <h1 class="title">Mind Sparks</h1>
+            <p class="subtitle">Test Your Knowledge</p>
+            <div class="language-selector">
+                <select id="language-select" class="dropdown">
+                    <option value="en">English</option>
+                    <option value="es">Español</option>
+                    <option value="fr">Français</option>
+                    <option value="de">Deutsch</option>
+                    <option value="it">Italiano</option>
+                </select>
+            </div>
+            <button id="start-btn" class="btn">Start Game</button>
+        </div>
+
+        <div id="game-screen" class="screen hidden">
+            <div class="score-container">
+                <span>Score: <span id="score">0</span></span>
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+            </div>
+            
+            <div class="question-container">
+                <div class="question-number">Question <span id="current-question">1</span> of <span id="total-questions">10</span></div>
+                <h2 id="question-text"></h2>
+                <div id="answers" class="answers-grid"></div>
+            </div>
+        </div>
+
+        <div id="result-screen" class="screen hidden">
+            <h2>Game Over!</h2>
+            <div class="final-stats">
+                <span id="final-score">0</span>
+                <div class="stat-item">
+                    <span id="correct-answers">0</span>/<span id="total-questions-result">10</span> Correct
+                </div>
+            </div>
+            <button id="play-again-btn" class="btn">Play Again</button>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
