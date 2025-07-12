@@ -135,4 +135,5 @@ def get_questions():
         return jsonify({'error': 'Internal server error'}), 500
 
 if __name__ == '__main__':
-    app.run(debug=True, port=2031, host='0.0.0.0') # Replace 'port' with your desired port
+    port = int(os.environ.get("SERVER_PORT", 2031))
+    app.run(debug=True, port=port, host='0.0.0.0')
